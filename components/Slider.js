@@ -1,17 +1,12 @@
-// import "./App.css";
 import Carousel from "./Corosel";
 
 function Slider() {
   const datas = [
     {
       src: "html.png",
-      // caption: `<div>
-      //   San Francisco<br/><span>Next line</span>
-      // </div>`,
     },
     {
       src: "css.png",
-      // caption: "<div>San Francisco</div>",
     },
     {
       src: "js.png",

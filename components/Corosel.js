@@ -7,21 +7,13 @@ function Carousel({
   time,
   width,
   height,
-  captionStyle,
-  slideNumberStyle,
   radius,
-  slideNumber,
   style,
-  captionPosition,
-  dots,
   automatic,
   pauseIconColor,
   pauseIconSize,
   slideBackgroundColor,
-  slideImageFit,
-  thumbnails,
   thumbnailWidth,
-  showNavBtn = true,
 }) {
   //Initialize States
   const [slide, setSlide] = useState(0);

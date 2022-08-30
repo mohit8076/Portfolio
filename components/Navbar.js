@@ -33,10 +33,10 @@ export default function Example() {
                       )}
                     </Disclosure.Button>
                   </div>
-                  <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                    <div className="flex-shrink-0 flex items-center">
+                  <div className="flex-1 flex items-center sm:justify-start">
+                    <div className="flex items-center">
                       <img
-                        className="hidden lg:block h-12 w-auto rounded-3xl bg-amber-400"
+                        className="hidden sm:block h-12 w-auto rounded-3xl bg-amber-400"
                         src="man.png"
                         alt="Workflow"
                       />
@@ -51,7 +51,7 @@ export default function Example() {
                       </a>
                     </div>
                   </div>
-                  <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto px-10 sm:pr-0">
+                  <div className="absolute inset-y-0 right-0 flex items-center pr-2 ">
                     <a
                       href="#"
                       className="text-gray-900 inline-flex items-center pt-1 px-8 text-md font-semibold hover:text-amber-400"

@@ -7,6 +7,7 @@ import About from "../components/About";
 import Project1 from "../components/Project1";
 import Slider from "../components/Slider";
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar1";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -21,7 +22,7 @@ export default function Home() {
         <Loader />
       ) : (
         <>
-          <Example />
+          <Navbar />
           <Section /> <About id="about" />
           <Project1 id="project" />
           <Slider />

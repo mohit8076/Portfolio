@@ -5,17 +5,17 @@ const lang = ["HTML", "CSS", "JS"];
 const About = ({id}) => {
   return (
     <>
-      <div id={id} className="bg-gray-50 h-full h-screen flex flex-col">
-        <h1 className="mt-10 font-semibold text-[27px] border-b-4 border-amber-400 mx-auto">
+      <div id={id} className="bg-gray-50 h-auto mb-8 flex flex-col">
+        <h1 className="mt-2 font-semibold text-[27px] border-b-4 border-amber-400 mx-auto">
           About Me
         </h1>
-        <h1 className="mt-6 w-3/5 mx-auto text-center text-[20px]">
+        <h1 className="w-11/12 mt-6 md:w-3/5 mx-auto text-center text-[20px]">
           Here you will find more information about me, what I do, and my
           current skills mostly in terms of programming and technology
         </h1>
-        <div className="flex justify-evenly">
-          <div className="w-2/5 mt-16 space-y-4 font-md mx-16">
-            <h1 className="font-bold text-[20px]">Get To Know Me !</h1>
+        <div className="flex-col flex md:flex-row justify-evenly">
+          <div className="w-11/12 mx-auto md:w-2/5 md:mb-7 mt-16 space-y-4 font-md md:mx-16">
+            <h1 className="font-bold mx-auto text-[20px]">Get To Know Me !</h1>
             <h1>
               I'm a Frontend Web Developer building the Front-end of Websites
               and Web Applications that leads to the success of the overall
@@ -35,37 +35,37 @@ const About = ({id}) => {
               experience then don't hesitate to contact me.
             </h1>
           </div>
-          <div className="w-2/5">
+          <div className="w-11/12 mx-auto md:w-2/5">
             <h1 className="font-bold text-[20px] mt-16 ml-6">My Skills.</h1>
-            <div className="flex flex-wrap mt-3">
-              <h1 className="border rounded-md hover:translate-y-1 hover:bg-amber-300 hover:text-white p-3 m-3 bg-gray-200">
+            <div className="mb-6 flex flex-wrap mt-3">
+              <h1 className="border p-2 font-bold text-gray-600 rounded-md hover:translate-y-1 hover:bg-amber-300 hover:text-white md:p-3 m-3 bg-gray-200">
                 HTML
               </h1>
-              <h1 className="border rounded-md hover:translate-y-1 hover:bg-amber-300 hover:text-white p-3 m-3 bg-gray-200">
+              <h1 className="border p-2 font-bold text-gray-600 rounded-md hover:translate-y-1 hover:bg-amber-300 hover:text-white md:p-3 m-3 bg-gray-200">
                 CSS
               </h1>
-              <h1 className="border rounded-md hover:translate-y-1 hover:bg-amber-300 hover:text-white p-3 m-3 bg-gray-200">
+              <h1 className="border p-2 font-bold text-gray-600 rounded-md hover:translate-y-1 hover:bg-amber-300 hover:text-white md:p-3 m-3 bg-gray-200">
                 JavaScript
               </h1>
-              <h1 className="border rounded-md hover:translate-y-1 hover:bg-amber-300 hover:text-white p-3 m-3 bg-gray-200">
+              <h1 className="border p-2 font-bold text-gray-600 rounded-md hover:translate-y-1 hover:bg-amber-300 hover:text-white md:p-3 m-3 bg-gray-200">
                 Responsive Design
               </h1>
-              <h1 className="border rounded-md hover:translate-y-1 hover:bg-amber-300 hover:text-white p-3 m-3 bg-gray-200">
+              <h1 className="border p-2 font-bold text-gray-600 rounded-md hover:translate-y-1 hover:bg-amber-300 hover:text-white md:p-3 m-3 bg-gray-200">
                 React
               </h1>
-              <h1 className="border rounded-md hover:translate-y-1 hover:bg-amber-300 hover:text-white p-3 m-3 bg-gray-200">
+              <h1 className="border p-2 font-bold text-gray-600 rounded-md hover:translate-y-1 hover:bg-amber-300 hover:text-white md:p-3 m-3 bg-gray-200">
                 TailwindCSS
               </h1>
-              <h1 className="border rounded-md hover:translate-y-1 hover:bg-amber-300 hover:text-white p-3 m-3 bg-gray-200">
+              <h1 className="border p-2 font-bold text-gray-600 rounded-md hover:translate-y-1 hover:bg-amber-300 hover:text-white md:p-3 m-3 bg-gray-200">
                 NextJS
               </h1>
-              <h1 className="border rounded-md hover:translate-y-1 hover:bg-amber-300 hover:text-white p-3 m-3 bg-gray-200">
+              <h1 className="border p-2 font-bold text-gray-600 rounded-md hover:translate-y-1 hover:bg-amber-300 hover:text-white md:p-3 m-3 bg-gray-200">
                 GIT
               </h1>
-              <h1 className="border rounded-md hover:translate-y-1 hover:bg-amber-300 hover:text-white p-3 m-3 bg-gray-200">
+              <h1 className="border p-2 font-bold text-gray-600 rounded-md hover:translate-y-1 hover:bg-amber-300 hover:text-white md:p-3 m-3 bg-gray-200">
                 Redux
               </h1>
-              <h1 className="border rounded-md hover:translate-y-1 hover:bg-amber-300 hover:text-white p-3 m-3 bg-gray-200">
+              <h1 className="border p-2 font-bold text-gray-600 rounded-md hover:translate-y-1 hover:bg-amber-300 hover:text-white md:p-3 m-3 bg-gray-200">
                 Github
               </h1>
             </div>
