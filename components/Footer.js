@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
   return (
     
-<footer class="p-4 bg-white sm:p-6 bg-gradient-to-b from-zinc-200 to-gray-50">
+<footer class="p-4 bg-white sm:p-6 bg-gradient-to-tl from-rose-100 to-teal-100 dark:bg-info1">
     <div class="md:flex md:justify-between">
         <div class="mb-6 md:mb-0">
             <a href="#" class="flex items-center">

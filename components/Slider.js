@@ -31,33 +31,22 @@ function Slider() {
     },
   ];
   return (
-    <div className="App">
-      <div style={{ textAlign: "center" }}>
-        <div
-          style={{
-            padding: "0 20px",
-          }}
-        >
-          <Carousel
-            data={datas}
-            time={2000}
-            width="850px"
-            height="150px"
-            radius="10px"
-            slideNumber={true}
-            automatic={true}
-            slideBackgroundColor="white"
-            thumbnails={true}
-            thumbnailWidth="100px"
-            style={{
-              textAlign: "center",
-              maxWidth: "850px",
-              margin: "40px auto",
-            }}
-          />
-        </div>
+    <div className="App bg-gradient-to-bl from-rose-100 to-teal-100">
+      {/* <div style={{ textAlign: "center" }}> */}
+        <Carousel
+          data={datas}
+          time={2000}
+          width="100%"
+          height="100%"
+          radius="10px"
+          slideNumber={true}
+          automatic={true}
+          // slideBackgroundColor="white"
+          thumbnails={true}
+          // thumbnailWidth="100px"
+        />
       </div>
-    </div>
+    // </div>
   );
 }
 

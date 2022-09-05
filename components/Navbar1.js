@@ -1,15 +1,48 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Transition } from "@headlessui/react";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variant";
+import { useTheme } from "next-themes";
+import { SunIcon, MoonIcon } from "@heroicons/react/solid";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { systemTheme, theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const renderThemeChanger = () => {
+    if (!mounted) return null;
+
+    const currentTheme = theme === "system" ? systemTheme : theme;
+
+    if (currentTheme === "dark") {
+      return (
+        <SunIcon
+          className="w-9 h-9 text-yellow-500 "
+          role="button"
+          onClick={() => setTheme("light")}
+        />
+      );
+    } else {
+      return (
+        <MoonIcon
+          className="w-9 h-9 text-gray-900 "
+          role="button"
+          onClick={() => setTheme("dark")}
+        />
+      );
+    }
+  };
+
   return (
     <div>
       <motion.div variants={fadeIn("down")} initial="initial" animate="animate">
-        <nav className="bg-white">
+        <nav className="bg-white dark:bg-gray-700">
           <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8 ">
             <div className="flex items-center justify-between h-20 ">
               {/* <div className="flex items-center"> */}
@@ -19,19 +52,22 @@ function Navbar() {
                   src="man.png"
                   alt="Workflow"
                 />
-                <h1 className="ml-3 text-md font-bold hover:text-amber-400">MOHIT CHAUHAN</h1>
+                <h1 className="ml-3 text-md font-bold hover:text-amber-400">
+                  MOHIT CHAUHAN
+                </h1>
               </div>
               <div className="hidden md:block">
-                <div className="ml-10 flex items-baseline ">
+                <div className="ml-10 flex items-center ">
+                  {/* <Logo /> */}
                   <a
                     href="#"
-                    className="text-gray-900 inline-flex items-center pt-1 px-8 text-md font-semibold hover:text-amber-400 cursor-pointer"
+                    className="inline-flex items-center pt-1 px-8 text-md font-semibold hover:text-amber-400 cursor-pointer"
                   >
                     Home
                   </a>
 
                   <Link
-                    className="text-gray-900 inline-flex items-center pt-1 px-8 text-md font-semibold hover:text-amber-400 cursor-pointer"
+                    className="inline-flex items-center pt-1 px-8 text-md font-semibold hover:text-amber-400 cursor-pointer"
                     activeClass="active"
                     to="about"
                     spy={true}
@@ -43,7 +79,7 @@ function Navbar() {
                   </Link>
 
                   <Link
-                    className="text-gray-900 inline-flex items-center pt-1 px-8 text-md font-semibold hover:text-amber-400 cursor-pointer"
+                    className="inline-flex items-center pt-1 px-8 text-md font-semibold hover:text-amber-400 cursor-pointer"
                     activeClass="active"
                     to="project"
                     spy={true}
@@ -55,7 +91,7 @@ function Navbar() {
                   </Link>
 
                   <Link
-                    className="text-gray-900 inline-flex items-center pt-1 px-8 text-md font-semibold hover:text-amber-400 cursor-pointer"
+                    className="inline-flex items-center pt-1 px-8 text-md font-semibold hover:text-amber-400 cursor-pointer"
                     activeClass="active"
                     to="contact"
                     spy={true}
@@ -65,6 +101,7 @@ function Navbar() {
                   >
                     Contact
                   </Link>
+                  <div>{renderThemeChanger()}</div>
                 </div>
               </div>
               {/* </div> */}
@@ -125,20 +162,20 @@ function Navbar() {
             leaveTo="opacity-0 scale-95"
           >
             {(ref) => (
-              <div className="md:hidden" id="mobile-menu">
+              <div className="md:hidden " id="mobile-menu">
                 <div
                   ref={ref}
-                  className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white"
+                  className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-info"
                 >
                   <a
                     href="#"
-                    className="text-gray-900 block p-2 text-md font-semibold hover:text-black hover:bg-amber-300 rounded-md cursor-pointer"
+                    className="text-gray-900 dark:text-white block p-2 text-md font-semibold hover:text-black hover:bg-amber-300 rounded-md cursor-pointer"
                   >
                     Home
                   </a>
 
                   <Link
-                    className="text-gray-900 block p-2 text-md font-semibold hover:text-black hover:bg-amber-300 rounded-md cursor-pointer"
+                    className="text-gray-900 dark:text-white block p-2 text-md font-semibold hover:text-black hover:bg-amber-300 rounded-md cursor-pointer"
                     activeClass="active"
                     to="about"
                     spy={true}
@@ -150,7 +187,7 @@ function Navbar() {
                   </Link>
 
                   <Link
-                    className="text-gray-900 block p-2 text-md font-semibold hover:text-black hover:bg-amber-300 rounded -md cursor-pointer"
+                    className="text-gray-900 dark:text-white block p-2 text-md font-semibold hover:text-black hover:bg-amber-300 rounded -md cursor-pointer"
                     activeClass="active"
                     to="project"
                     spy={true}
@@ -162,7 +199,7 @@ function Navbar() {
                   </Link>
 
                   <Link
-                    className="text-gray-900 block p-2 text-md font-semibold hover:text-black hover:bg-amber-300 rounded-md cursor-pointer"
+                    className="text-gray-900 dark:text-white block p-2 text-md font-semibold hover:text-black hover:bg-amber-300 rounded-md cursor-pointer"
                     activeClass="active"
                     to="about"
                     spy={true}

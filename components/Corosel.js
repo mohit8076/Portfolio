@@ -12,7 +12,7 @@ function Carousel({
   automatic,
   pauseIconColor,
   pauseIconSize,
-  slideBackgroundColor,
+  thumbnails,
   thumbnailWidth,
 }) {
   //Initialize States
@@ -96,84 +96,43 @@ function Carousel({
   }, [slide, isPaused]);
 
   return (
-    <div style={style} className="box">
-      <div
-        style={{
-          maxWidth: "600px",
-          maxHeight: height ? height : "200px",
+    <div style={style} className="box dark:bg-info">
+      <Swipe
+        onSwipeRight={() => {
+          addSlide(-1);
+          setChange(!change);
+        }}
+        onSwipeLeft={() => {
+          addSlide(1);
+          setChange(!change);
         }}
       >
-        <Swipe
-          onSwipeRight={() => {
-            addSlide(-1);
-            setChange(!change);
-          }}
-          onSwipeLeft={() => {
-            addSlide(1);
-            setChange(!change);
+        <div
+          className="carousel-container"
+          style={{
+            maxWidth: "150px",
+            height: height ? height : "200px",
+            borderRadius: radius,
+            margin:"auto"
           }}
         >
-          <div
-            className="carousel-container"
-            style={{
-              maxWidth:"150px",
-              height: height ? height : "200px",
-              backgroundColor: slideBackgroundColor
-                ? slideBackgroundColor
-                : "white",
-              borderRadius: radius,
-            }}
-          >
-            {data?.map((item, index) => {
-              return (
-                <div
-                  className="carousel-item fade"
-                  style={{
-                    maxWidth: width ? width : "600px",
-                    maxHeight: height ? height : "400px",
-                  }}
-                  onMouseDown={(e) => {
-                    automatic && setIsPaused(true);
-                  }}
-                  onMouseUp={(e) => {
-                    automatic && setIsPaused(false);
-                  }}
-                  onMouseLeave={(e) => {
-                    automatic && setIsPaused(false);
-                  }}
-                  onTouchStart={(e) => {
-                    automatic && setIsPaused(true);
-                  }}
-                  onTouchEnd={(e) => {
-                    automatic && setIsPaused(false);
-                  }}
-                  key={index}
-                >
-                  <img
-                    src={item.src}
-                    className="carousel-image"
-                    style={{
-                      borderRadius: radius,
-                      objectFit: "fill",
-                    }}
-                  />
-                  {isPaused && (
-                     <div
-                      className="pause-icon pause"
-                      style={{
-                        color: pauseIconColor ? pauseIconColor : "white",
-                        fontSize: pauseIconSize ? pauseIconSize : "40px",
-                      }}
-                    >
-                      II
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </Swipe>
-      </div>
+          {data?.map((item, index) => {
+            return (
+              <div
+                className="carousel-item fade"
+                y
+                key={index}
+              >
+                <img
+                  src={item.src}
+                  className=""
+                />
+              </div>
+            );
+          })}
+        </div>
+      </Swipe>
+
       {thumbnails && (
         <div
           className="thumbnails"

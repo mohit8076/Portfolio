@@ -6,7 +6,7 @@ const Project1 = ({id}) => {
     
   return (
     <>
-      <div className=" h-auto flex flex-col" id={id}>
+      <div className=" h-auto  bg-gradient-to-bl from-rose-100 to-teal-100 flex flex-col dark:bg-info" id={id}>
         <h1 className="mt-15 font-semibold text-[27px] border-b-4 border-amber-400 mx-auto">
           Projects
         </h1>
@@ -26,7 +26,7 @@ const Project1 = ({id}) => {
         </div>
       </div>
       {/* <div className="bg-gray-50 flex flex-col"> */}
-        <div className="flex-col-reverse flex md:flex-row justify-evenly items-center">
+        <div className="flex-col-reverse bg-gradient-to-tl from-rose-100 to-teal-100 flex md:flex-row justify-evenly items-center dark:bg-info1">
           <div className="flex justify-center w-2/5 mt-10">
             <img  src={featuredImages[1]} alt="" />
           </div>
