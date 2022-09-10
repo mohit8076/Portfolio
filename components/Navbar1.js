@@ -5,11 +5,24 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../variant";
 import { useTheme } from "next-themes";
 import { SunIcon, MoonIcon } from "@heroicons/react/solid";
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
+import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 function Navbar() {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const { systemTheme, theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const router = useRouter();
+
+  const handleLocaleChange = (event) => {
+    const value = event.target.value;
+
+    router.push(router.route, router.asPath, {
+      locale: value,
+    });
+  };
 
   useEffect(() => {
     setMounted(true);
@@ -23,7 +36,7 @@ function Navbar() {
     if (currentTheme === "dark") {
       return (
         <SunIcon
-          className="w-9 h-9 text-yellow-500 "
+          className="w-7 h-7 text-yellow-500 "
           role="button"
           onClick={() => setTheme("light")}
         />
@@ -31,7 +44,7 @@ function Navbar() {
     } else {
       return (
         <MoonIcon
-          className="w-9 h-9 text-gray-900 "
+          className="w-7 h-7 text-gray-900 "
           role="button"
           onClick={() => setTheme("dark")}
         />
@@ -52,60 +65,74 @@ function Navbar() {
                   src="man.png"
                   alt="Workflow"
                 />
-                <h1 className="ml-3 text-md font-bold hover:text-amber-400">
-                  MOHIT CHAUHAN
+                <h1 className="ml-3 text-md uppercase font-bold hover:text-amber-400">
+                  {t("Mohit Chauhan")}
                 </h1>
               </div>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-center ">
-                  {/* <Logo /> */}
-                  <a
-                    href="#"
-                    className="inline-flex items-center pt-1 px-8 text-md font-semibold hover:text-amber-400 cursor-pointer"
-                  >
-                    Home
-                  </a>
+                  <div>
+                    <a
+                      href="#"
+                      className="inline-flex items-center pt-1 px-8 text-md font-semibold hover:text-amber-400 cursor-pointer"
+                    >
+                      {t("Home")}
+                    </a>
 
-                  <Link
-                    className="inline-flex items-center pt-1 px-8 text-md font-semibold hover:text-amber-400 cursor-pointer"
-                    activeClass="active"
-                    to="about"
-                    spy={true}
-                    smooth={true}
-                    // offset={50}
-                    duration={500}
-                  >
-                    About
-                  </Link>
+                    <Link
+                      className="inline-flex items-center pt-1 px-8 text-md font-semibold hover:text-amber-400 cursor-pointer"
+                      activeClass="active"
+                      to="about"
+                      spy={true}
+                      smooth={true}
+                      // offset={50}
+                      duration={500}
+                    >
+                      {t("About")}
+                    </Link>
 
-                  <Link
-                    className="inline-flex items-center pt-1 px-8 text-md font-semibold hover:text-amber-400 cursor-pointer"
-                    activeClass="active"
-                    to="project"
-                    spy={true}
-                    smooth={true}
-                    // offset={50}
-                    duration={500}
-                  >
-                    Project
-                  </Link>
+                    <Link
+                      className="inline-flex items-center pt-1 px-8 text-md font-semibold hover:text-amber-400 cursor-pointer"
+                      activeClass="active"
+                      to="project"
+                      spy={true}
+                      smooth={true}
+                      // offset={50}
+                      duration={500}
+                    >
+                      {t("Project")}
+                    </Link>
 
-                  <Link
-                    className="inline-flex items-center pt-1 px-8 text-md font-semibold hover:text-amber-400 cursor-pointer"
-                    activeClass="active"
-                    to="contact"
-                    spy={true}
-                    smooth={true}
-                    // offset={50}
-                    duration={500}
-                  >
-                    Contact
-                  </Link>
+                    <Link
+                      className="inline-flex items-center pt-1 px-8 text-md font-semibold hover:text-amber-400 cursor-pointer"
+                      activeClass="active"
+                      to="contact"
+                      spy={true}
+                      smooth={true}
+                      // offset={50}
+                      duration={500}
+                    >
+                      {t("Contact")}
+                    </Link>
+                  </div>
                   <div>{renderThemeChanger()}</div>
+                  <select className="ml-3 p-2 bg-zinc-100 dark:bg-gray-500 rounded-lg" onChange={handleLocaleChange} value={router.locale}>
+                  <option value="en">English<span class="fi fi-gb"></span></option>
+                  <option value="fr">French<span class="fi fi-gr"></span></option>
+                  <option value="hi">Hindi<span class="fi fi-gr"></span></option>
+                  </select>
                 </div>
               </div>
               {/* </div> */}
               <div className="-mr-2 flex md:hidden">
+                <div className="mr-3 flex items-center">
+                  {renderThemeChanger()}
+                </div>
+                <select className="mr-3" onChange={handleLocaleChange} value={router.locale}>
+                    <option value="en">English</option>
+                    <option value="fr">French</option>
+                    <option value="hi">Hindi</option>
+                  </select>
                 <button
                   onClick={() => setIsOpen(!isOpen)}
                   type="button"
@@ -171,7 +198,7 @@ function Navbar() {
                     href="#"
                     className="text-gray-900 dark:text-white block p-2 text-md font-semibold hover:text-black hover:bg-amber-300 rounded-md cursor-pointer"
                   >
-                    Home
+                    {t("Home")}
                   </a>
 
                   <Link
@@ -183,7 +210,7 @@ function Navbar() {
                     // offset={50}
                     duration={500}
                   >
-                    About
+                    {t("About")}
                   </Link>
 
                   <Link
@@ -195,7 +222,7 @@ function Navbar() {
                     // offset={50}
                     duration={500}
                   >
-                    Project
+                    {t("Project")}
                   </Link>
 
                   <Link
@@ -207,7 +234,7 @@ function Navbar() {
                     // offset={50}
                     duration={500}
                   >
-                    Contact
+                    {t("Contact")}
                   </Link>
                 </div>
               </div>

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "next-i18next";
+
 
 const LoaderVariant = {
   initial: { left: "-100vw" },
@@ -10,6 +12,8 @@ const LoaderVariant = {
 };
 
 const Loader = () => {
+  const { t } = useTranslation();
+
   const [count, setCount] = useState(0);
   const [test, setTest] = useState(true);
 
@@ -27,9 +31,9 @@ const Loader = () => {
     <>
       <div className="loader-container">
         <div className="loader-wrap">
-          <p>Let's Get Ready!</p>
+          <p>{t("starter")}</p>
           <motion.div
-            className="loader-bar"
+            className="loader-bar dark:bg-white"
             variants={LoaderVariant}
             initial="initial"
             animate="animate"
