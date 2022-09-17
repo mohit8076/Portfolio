@@ -10,7 +10,7 @@ const About = ({id}) => {
   return (
     <>
       <div id={id} className="bg-gradient-to-tl from-rose-100 to-teal-100 h-auto flex flex-col dark:bg-info1">
-        <h1 className="mt-2 font-semibold text-[27px] border-b-4 border-amber-400 mx-auto">
+        <h1 id="about_heading" className="mt-2 font-semibold text-[27px] border-b-4 border-amber-400 mx-auto">
           {t("about_me")}
         </h1>
         <h1 className="w-11/12 mt-6 md:w-3/5 mx-auto text-center text-[20px]">
@@ -33,7 +33,7 @@ const About = ({id}) => {
           <div className="w-11/12 mx-auto md:w-2/5">
             <h1 className="font-bold text-[20px] mt-16 ml-6">{t("Skills")}</h1>
             <div className="mb-6 flex flex-wrap mt-3">
-              <h1 className="border p-2 font-bold text-gray-600 rounded-md hover:translate-y-1 hover:bg-amber-300 hover:text-white md:p-3 m-3 bg-white">
+              <h1 className="dark:bg-black dark:text-white p-2 font-bold text-gray-600 rounded-md hover:translate-y-1 hover:bg-amber-300 hover:text-white md:p-3 m-3 bg-white">
                 HTML
               </h1>
               <h1 className="border p-2 font-bold text-gray-600 rounded-md hover:translate-y-1 hover:bg-amber-300 hover:text-white md:p-3 m-3 bg-white">

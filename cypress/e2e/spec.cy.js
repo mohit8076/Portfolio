@@ -1,0 +1,35 @@
+describe('empty spec', () => {
+  it('UI check ', () => {
+    cy.visit('/')
+    // cy.get(".loader-bar").should('be.visible').should('be.enabled')
+    cy.get('#navbar').should('be.visible')
+    cy.get('#nav_img').should('be.visible')
+    cy.get('#nav_img_text').should('be.visible')
+    cy.get('#nav_link1').should('be.visible')
+    cy.get('#nav_link2').should('be.visible')
+    cy.get('#nav_link3').should('be.visible')
+    cy.get('#nav_link4').should('be.visible')
+    cy.get('#nav_lang').should('be.visible')
+
+    //section page
+    cy.get('#intro_text').should('be.visible').contains("HEY, I AM")
+    cy.get('#intro_para').should('be.visible')
+    cy.get('#project_button').should('be.visible')
+    cy.get('#project_icon').should('be.visible')
+
+    //scrolling
+    // cy.get('#nav_link2').should('be.visible').click().wait(2000)
+    cy.wait(3000)
+    cy.scrollTo(700)
+    // cy.get('#about').should('be.visible')
+    cy.get('#about > .flex-col').should('be.visible')
+    cy.scrollTo(700,1200)
+    cy.get('#project > .flex-col').should('be.visible')
+    cy.get('.mt-15').should('be.visible')
+    cy.scrollTo(1200,1800)
+    cy.get('.pb-12').should('be.visible')
+    cy.get('.box > :nth-child(1)').should('be.visible')
+    cy.get('#thumbnail-div').should('be.visible')
+    cy.scrollTo('bottom')
+  })
+})

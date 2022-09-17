@@ -57,15 +57,22 @@ function Navbar() {
       <motion.div variants={fadeIn("down")} initial="initial" animate="animate">
         <nav className="bg-white dark:bg-gray-700">
           <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8 ">
-            <div className="flex items-center justify-between h-20 ">
+            <div
+              className="flex items-center justify-between h-20 "
+              id="navbar"
+            >
               {/* <div className="flex items-center"> */}
               <div className="flex flex-row items-center">
                 <img
                   className="h-12 w-12 rounded-3xl bg-amber-400"
+                  id="nav_img"
                   src="man.png"
                   alt="Workflow"
                 />
-                <h1 className="ml-3 text-md uppercase font-bold hover:text-amber-400">
+                <h1
+                  id="nav_img_text"
+                  className="ml-3 text-md uppercase font-bold hover:text-amber-400"
+                >
                   {t("Mohit Chauhan")}
                 </h1>
               </div>
@@ -74,12 +81,14 @@ function Navbar() {
                   <div>
                     <a
                       href="#"
+                      id="nav_link1"
                       className="inline-flex items-center pt-1 px-8 text-md font-semibold hover:text-amber-400 cursor-pointer"
                     >
                       {t("Home")}
                     </a>
 
                     <Link
+                      id="nav_link2"
                       className="inline-flex items-center pt-1 px-8 text-md font-semibold hover:text-amber-400 cursor-pointer"
                       activeClass="active"
                       to="about"
@@ -92,6 +101,7 @@ function Navbar() {
                     </Link>
 
                     <Link
+                      id="nav_link3"
                       className="inline-flex items-center pt-1 px-8 text-md font-semibold hover:text-amber-400 cursor-pointer"
                       activeClass="active"
                       to="project"
@@ -104,6 +114,7 @@ function Navbar() {
                     </Link>
 
                     <Link
+                      id="nav_link4"
                       className="inline-flex items-center pt-1 px-8 text-md font-semibold hover:text-amber-400 cursor-pointer"
                       activeClass="active"
                       to="contact"
@@ -116,10 +127,21 @@ function Navbar() {
                     </Link>
                   </div>
                   <div>{renderThemeChanger()}</div>
-                  <select className="ml-3 p-2 bg-zinc-100 dark:bg-gray-500 rounded-lg" onChange={handleLocaleChange} value={router.locale}>
-                  <option value="en">English<span class="fi fi-gb"></span></option>
-                  <option value="fr">French<span class="fi fi-gr"></span></option>
-                  <option value="hi">Hindi<span class="fi fi-gr"></span></option>
+                  <select
+                    id="nav_lang"
+                    className="ml-3 p-2 bg-zinc-100 dark:bg-gray-500 rounded-lg"
+                    onChange={handleLocaleChange}
+                    value={router.locale}
+                  >
+                    <option value="en">
+                      English<span class="fi fi-gb"></span>
+                    </option>
+                    <option value="fr">
+                      French<span class="fi fi-gr"></span>
+                    </option>
+                    <option value="hi">
+                      Hindi<span class="fi fi-gr"></span>
+                    </option>
                   </select>
                 </div>
               </div>
@@ -128,11 +150,15 @@ function Navbar() {
                 <div className="mr-3 flex items-center">
                   {renderThemeChanger()}
                 </div>
-                <select className="mr-3" onChange={handleLocaleChange} value={router.locale}>
-                    <option value="en">English</option>
-                    <option value="fr">French</option>
-                    <option value="hi">Hindi</option>
-                  </select>
+                <select
+                  className="mr-3"
+                  onChange={handleLocaleChange}
+                  value={router.locale}
+                >
+                  <option value="en">English</option>
+                  <option value="fr">French</option>
+                  <option value="hi">Hindi</option>
+                </select>
                 <button
                   onClick={() => setIsOpen(!isOpen)}
                   type="button"
