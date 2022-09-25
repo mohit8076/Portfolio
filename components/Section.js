@@ -44,7 +44,10 @@ const Section = () => {
           </Link>
 
           {/* </button> */}
-          <span id="project_icon" className="mt-24 animate-bounce rounded-full p-4 bg-gray-800 text-white text-sm w-auto mx-auto dark:bg-amber-400">
+          <span
+            id="project_icon"
+            className="mt-24 animate-bounce rounded-full p-4 bg-gray-800 text-white text-sm w-auto mx-auto dark:bg-amber-400"
+          >
             <svg
               className="w-6 h-6 mx-auto"
               xmlns="http://www.w3.org/2000/svg"

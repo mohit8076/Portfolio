@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useState, useEffect } from "react";
 import { Transition } from "@headlessui/react";
 import { Link } from "react-scroll";
@@ -9,6 +8,7 @@ import { SunIcon, MoonIcon } from "@heroicons/react/solid";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
+import Image from "next/image";
 
 function Navbar() {
   const { t } = useTranslation();
@@ -64,11 +64,13 @@ function Navbar() {
             >
               {/* <div className="flex items-center"> */}
               <div className="flex flex-row items-center">
-                <img
-                  className="h-12 w-12 rounded-3xl bg-amber-400"
+                <Image
+                  className="rounded-3xl bg-amber-400"
                   id="nav_img"
-                  src="man.png"
+                  src="/man.png"
                   alt="Workflow"
+                  height="45px"
+                  width="45px"
                 />
                 <h1
                   id="nav_img_text"
@@ -135,13 +137,13 @@ function Navbar() {
                     value={router.locale}
                   >
                     <option value="en">
-                      English<span class="fi fi-gb"></span>
+                      English<span className="fi fi-gb"></span>
                     </option>
                     <option value="fr">
-                      French<span class="fi fi-gr"></span>
+                      French<span className="fi fi-gr"></span>
                     </option>
                     <option value="hi">
-                      Hindi<span class="fi fi-gr"></span>
+                      Hindi<span className="fi fi-gr"></span>
                     </option>
                   </select>
                 </div>

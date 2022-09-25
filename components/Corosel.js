@@ -1,6 +1,6 @@
-/* eslint-disable */
 import React, { useEffect, useState } from "react";
 import Swipe from "react-easy-swipe";
+import Image from "next/image";
 // import "./styles/index.css";
 
 function Carousel({
@@ -47,7 +47,7 @@ function Carousel({
         clearInterval(interval);
       };
     }
-  }, [isPaused, change]);
+  }, [automatic, data.length, slide, time, isPaused, change]);
 
   function scrollTo(el) {
     const elLeft = el.offsetLeft + el.offsetWidth;
@@ -94,7 +94,7 @@ function Carousel({
     if (slides[slideIndex] !== undefined)
       slides[slideIndex].style.display = "block";
     if (dots[slideIndex] !== undefined) dots[slideIndex].className += " active";
-  }, [slide, isPaused]);
+  }, [data?.length, thumbnails, slide, isPaused]);
 
   return (
     <div style={style} className="box dark:bg-info">
@@ -114,20 +114,13 @@ function Carousel({
             maxWidth: "150px",
             height: height ? height : "200px",
             borderRadius: radius,
-            margin:"auto"
+            margin: "auto",
           }}
         >
           {data?.map((item, index) => {
             return (
-              <div
-                className="carousel-item fade"
-                y
-                key={index}
-              >
-                <img
-                  src={item.src}
-                  className=""
-                />
+              <div className="carousel-item fade" y key={index}>
+                <Image height="120px" width="120px" alt="" src={item.src} className="" />
               </div>
             );
           })}
@@ -142,7 +135,10 @@ function Carousel({
         >
           {data.map((item, index) => {
             return (
-              <img
+              <Image
+                // layout="fill"
+                height="100px"
+                alt=""
                 width={thumbnailWidth ? thumbnailWidth : "100px"}
                 src={item.src}
                 className="thumbnail"

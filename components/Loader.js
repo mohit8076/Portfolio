@@ -1,8 +1,6 @@
-/* eslint-disable */
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "next-i18next";
-
 
 const LoaderVariant = {
   initial: { left: "-100vw" },

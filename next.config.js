@@ -14,12 +14,15 @@
 // module.exports = nextConfig
 
 /** @type {import('next').NextConfig} */
-;
+const prod = process.env.NODE_ENV === 'production'
+
+
 const { i18n } = require("./next-i18next.config");
 const withPWA = require("next-pwa")({
     dest: "public",
     register: true,
     skipWaiting: true,
+    disable: prod ? false : true
 });
 module.exports = withPWA({
     i18n,
