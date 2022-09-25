@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useEffect, useState } from "react";
 import Swipe from "react-easy-swipe";
 // import "./styles/index.css";

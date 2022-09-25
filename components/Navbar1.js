@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState, useEffect } from "react";
 import { Transition } from "@headlessui/react";
 import { Link } from "react-scroll";
@@ -129,7 +130,7 @@ function Navbar() {
                   <div>{renderThemeChanger()}</div>
                   <select
                     id="nav_lang"
-                    className="ml-3 p-2 bg-zinc-100 dark:bg-gray-500 rounded-lg"
+                    className="ml-3 p-2 bg-white dark:bg-gray-500 rounded-lg"
                     onChange={handleLocaleChange}
                     value={router.locale}
                   >

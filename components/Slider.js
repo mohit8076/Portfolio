@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Carousel from "./Corosel";
 
 function Slider() {
