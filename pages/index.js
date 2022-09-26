@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Loader from "../components/Loader";
 import Section from "../components/Section";
-import About from "../components/About";
+import About from "../components/Info";
 import Project1 from "../components/Project1";
 import Slider from "../components/Slider";
 import Footer from "../components/Footer";

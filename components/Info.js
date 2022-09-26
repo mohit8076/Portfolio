@@ -4,7 +4,7 @@ import { useTranslation } from "next-i18next";
 
 const lang = ["HTML", "CSS", "JS"];
 
-const About = ({id}) => {
+const Info = ({id}) => {
   const { t } = useTranslation();
 
   return (
@@ -71,4 +71,4 @@ const About = ({id}) => {
   );
 };
 
-export default About;
+export default Info;
