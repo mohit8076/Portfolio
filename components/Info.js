@@ -10,7 +10,6 @@ const lang = [
   "TailwindCSS",
   "NextJS",
   "Git",
-  "Github",
   "Redux",
   "RedwoodJs",
 ];
